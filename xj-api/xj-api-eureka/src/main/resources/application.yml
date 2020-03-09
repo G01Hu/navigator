@@ -1,0 +1,21 @@
+server:
+  port: 8100
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    # 不注册自身
+    register-with-eureka: false
+    # 启动时不获取注册表
+    fetch-registry: false
+  server:
+    # 开发时关闭自我保护机制
+    enable-self-preservation: false
+    # 服务器清理服务列表的定时器
+    eviction-interval-timer-in-ms: 10000
+spring:
+  application:
+    name: XJ-API-EUREKA

@@ -1,0 +1,18 @@
+zuul:
+  # 敏感数据在转发时移除
+  sensitive-headers: Cookie,Set-Cookie
+  routes:
+    # 认证中心
+    XJ-API-OAUTH:
+      path: /oauth/**
+      serviceId: XJ-API-OAUTH
+    XJ-API-OA:
+      path: /oa/**
+      serviceId: XJ-API-OA
+management:
+  endpoints:
+    web:
+      exposure:
+        #开启重新加载配置
+        include: refresh
+

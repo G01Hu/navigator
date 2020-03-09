@@ -1,0 +1,30 @@
+server:
+  port: 8106
+
+spring:
+  application:
+    name: XJ-API-OA
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: XJ-API-CONFIG
+      name: oracle-database,hystrix-ribbon,XJ-API-OA,security-oauth
+  activiti:
+    deployment-mode: single-resource
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+feign:
+  httpclient:
+    enabled: true
+logging:
+  level:
+    org.activiti: debug
+    com.ferrotec.oa: debug
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

@@ -1,0 +1,26 @@
+server:
+  port: 8102
+
+spring:
+  application:
+    name: XJ-API-OAUTH
+  cloud:
+    config:
+      discovery:
+        service-id: XJ-API-CONFIG
+        enabled: true
+      name: oracle-database,hystrix-ribbon
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    org:
+      springframework:
+        security: debug

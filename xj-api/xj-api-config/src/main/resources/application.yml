@@ -1,0 +1,18 @@
+server:
+  port: 8101
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+spring:
+  application:
+    name: XJ-API-CONFIG
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/META-INF/config
+  profiles:
+    active: native
+

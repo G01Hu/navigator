@@ -1,0 +1,22 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: XJ-API-ZUUL
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: XJ-API-CONFIG
+      # 配置未获取时重试
+      fail-fast: true
+      name: hystrix-ribbon,XJ-API-ZUUL
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+
+#logging:
+  #level:
+    #root: debug

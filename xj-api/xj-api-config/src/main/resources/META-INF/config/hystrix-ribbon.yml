@@ -1,0 +1,15 @@
+hystrix:
+  command:
+    myusers-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+ribbon:
+  ConnectTimeout: 1000
+  # 调试时将此值调大
+  ReadTimeout: 50000
+  SocketTimeout: 3000
+  MaxTotalHttpConnections: 500
+  MaxConnectionsPerHost: 100

@@ -1,0 +1,14 @@
+security:
+  oauth2:
+    client:
+      clientId: mes
+      clientSecret: mes_client
+      access-token-uri: http://localhost:8102/oauth/authorize
+    resource:
+      user-info-uri: http://
+    authorization:
+      check-token-access: http://localhost:8102/oauth/check_token
+
+feign:
+  okhttp:
+    enabled: true

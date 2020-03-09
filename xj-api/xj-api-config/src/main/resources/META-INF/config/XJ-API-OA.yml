@@ -1,0 +1,17 @@
+logging:
+  file: /mnt/oa/oa.log
+  level:
+    org.springframework.web: debug
+    org.springframework.security: error
+    com.ferrotec.oa.dao : debug
+
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070
+  logger:
+    enabled: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url:
+    username:
+    password:
+
